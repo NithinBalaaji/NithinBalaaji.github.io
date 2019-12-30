@@ -1,0 +1,465 @@
+    <!-- Bootstrap CSS -->
+
+        <style>
+            #demo {
+                text-align: center;
+                font-size: 30px;
+                margin-top: 2%;
+            }
+
+            .container{
+                margin-top: 4%;
+                color: white;
+            }
+
+            body{
+                background: url("https://i.pinimg.com/originals/4a/96/e6/4a96e602750b8ef669a77565becf3939.gif");
+            }
+
+
+        </style>
+    <head>
+        <!-- Required meta tags -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    </head>
+<body>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $(function(){
+        $('li').on('click',function(e){
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $($(e.target).attr("href")).offset().top
+            }, 1000);
+        });
+    });
+</script>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Navbar content -->
+    <a class="navbar-brand" href="index.php">Nithin's World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul id="topmenu" class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#interest">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#ambition">Ambition</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#project">Achievements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tech">Technical Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<script>
+
+
+    $(document).ready(function () {
+        $(document).on("scroll", onScroll);
+
+        //smoothscroll
+        $('a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
+            $(document).off("scroll");
+
+            $('a').each(function () {
+                $(this).removeClass('active');
+            })
+            $(this).addClass('active');
+
+            var target = this.hash,
+                menu = target;
+            $target = $(target);
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top+2
+            }, 500, 'swing', function () {
+                window.location.hash = target;
+                $(document).on("scroll", onScroll);
+            });
+        });
+    });
+
+    function onScroll(event){
+        var scrollPos = $(document).scrollTop();
+        $('#navbarNav a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top -20 <= scrollPos && refElement.position().top + refElement.height() -20> scrollPos) {
+                $('#navbarNav ul li a').removeClass("active");
+                currLink.addClass("active");
+            }
+            else{
+                currLink.removeClass("active");
+            }
+        });
+    }
+
+
+</script>
+
+
+<script>
+
+    var countDownDate = new Date("Aug 22, 2019 23:59:59").getTime();
+
+
+    var x = setInterval(function() {
+
+
+        var now = new Date().getTime();
+
+
+        var distance = countDownDate - now;
+
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+<body>
+
+
+<div class="container">
+    <div id="top" style="font-size: 25px;"><br>
+        Will return to India in: <br>
+    </div>
+    <div id="demo" style="border-bottom: 1px solid azure;"><br></div>
+    <div id="intro" style="font-size: 20px; ">
+        <br>
+        Hey! Thanks for taking out your time. Welcome to my page. Do go through it and contact me for any queries or information!
+        <br> Enjoy!
+    </div>
+
+
+    <div id="about" style="border-bottom: 1px solid azure "><br>
+        <br>
+        <h1><u>About</u></h1> Hey People! Welcome to my page. <br> I am Nithin Balaaji, a 2nd Year Computer Science and Engineering Student at the National Institute of Technology, Trichy.
+        I am passionate of creating and building products for life and living. I am an aspiring entreprenuer who is determined to bring a positive change to the people around.
+        I am a recipient of the Jitheshraj Scholarship for promising freshmen. I was a part of the Students' Council representing 900+ students of my batch. I dream to bring changes in and around
+        people which will strive for their betterment.<br>
+        <br>
+
+    </div>
+
+    <div id="entre" style="border-bottom: 1px solid azure">
+        <br>
+        <h1><u>My Ideals!</u></h1>
+        <br>
+        <br>
+        <ul class="list-unstyled">
+            <li class="media">
+                <img src="https://i.forbesimg.com/media/lists/people/ritesh-agarwal_416x416.jpg" class="mr-3" alt="..." style="width:13%">
+                <div class="media-body" style="border-bottom: 1px solid black">
+                    <h3 class="mt-0">Meet Ritesh Agarwal!</h3>
+                    <h5>CEO,OYO Rooms.</h5>
+                    Ritesh Agarwal is the founder and CEO of OYO. He started his business career at 17, back-packing across the country, living in budget accommodations to eventually create the idea behind OYO. He is the first resident Asian to be awarded the Thiel Fellowship. In his free time, he loves cycling and practicing yoga.
+                <br>
+                   <br>
+                </div>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable1">More Info!</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalScrollable1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle1" aria-hidden="true" style="color: black">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle1">Ritesh Agarwal</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="color: black">
+                                Ritesh Agarwal is the young founder and CEO of OYO Rooms, the fastest growing network of hotels, offline and online. The current evaluation of OYO Rooms is over $400 million. OYO Rooms does nothing out of the box but provides travelers the coolest yet cheapest budget hotels.
+                                <br>
+                                Ritesh was born to a business family in Orissa and attended the Sacred Heart School in Raygada, Orissa. During the growing up days in Raygada, it was all about fun and learning for him. But Ritesh’s ways were rather unconventional from those of other kids. His fun elements included screwing around with the computer, trying hard to find opportunities to make mistakes so that he could learn new stuff. As a result, he gained a keen interest in softwares. This started with the idea of knowing more about it and then the hunger just went on increasing. To quench his thirst to know more, he borrowed his elder brother’s books for programming. Some of the fun languages like Basic and Pascal were taught in school itself, and rest he managed to learn from Google. He had started coding when he was just eight years old. Hence, software had obviously become his first love. By the time he reached tenth grade, he had made up his mind and wanted to take up coding for eleventh.
+
+                                Later in 2011, Ritesh moved to Delhi with strong intentions of starting up something of his own. At the same time, he also prepared for SAT to move to the States for further studies. But fortunately or unfortunately, SAT never happened. Thereafter he used to do nothing but read about entrepreneurs, startups, businesses and especially, Airbnb.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            <li class="media my-4">
+                <img src="https://static.langimg.com/thumb/msid-63203438,width-400,resizemode-4/paytm.jpg" class="mr-3" alt="..."  style="width:13%">
+                <div class="media-body" style="border-bottom: 1px solid black">
+                    <h3 class="mt-0">Meet Vijay Shekhar Sharma!</h3>
+                    <h5>CEO,PayTM.</h5>
+                    Vijay Shekhar Sharma (born 1980) is an Indian billionaire businessman. He is the founder of mobile payments company Paytm. Sharma was ranked as India's youngest billionaire in 2017 by the Forbes with a net worth of $2.1 billion.
+                <br>
+                    <br>
+                </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">More Info!</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="color: black">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Vijay Shekhar Sharma</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Brought up in the small town called Harduaganj near Aligarh, Vijay Shekhar Sharma taught himself to read two books at a time -- on in hindi and the other in English -- this helped him prepare for his dream to become an engineer. Sharma finished plus two at the age of 14 way ahead of the level but had to wait for year to get into an engineering college because of his age.                                <br>
+                                Since Sharma had done most of his schooling in Hindi, an English entrance exam would have been an ask but he took up the challenge. His technique to read two books at a time helped him crack the entrance for Delhi College of Engineering in 1994.
+                                The advent of Yahoo, Netscape altered the jobs landscape in India. Stories from Silicon Valley of people who dropped out to create firms became inspirational. Sharma teamed up with a friend to start his first company -- XS Corps -- while still in college. The firm built content management systems for the web with his college hostel room for office and a shopkeeper's phone as office landline.
+                           <br>
+                            In 2005, he had raised a hefty amount of Rs 8 lakh through his venture of which he was conned off 40%. He was devastated. But Sharma was not a man to give up so easily. Things took to a better turn when he began One97, the parent company of Paytm. He started experimenting with the three basics of internet- content, advertising and commerce. But the big eureka moment came in 2011 when he first pitched the idea of entering the payment ecosystem in front of his board.
+                            He put 1% of his equity, which was about $2 million around 2011, on the table and said, “This is for all of you, if I waste the money that we put on the site.” He adds, “There is no fun in doing what others ask you to do, the real fun is in doing what people say you can’t do.”
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="media">
+                <img src="https://specials-images.forbesimg.com/imageserve/5aa95bc131358e79a28bd295/416x416.jpg?background=000000&cropX1=0&cropX2=2558&cropY1=278&cropY2=2836" class="mr-3" alt="..." style="width:13%">
+                <div class="media-body">
+                    <h3 class="mt-0">Meet Trishneet Arora!</h3>
+                    <h5>CEO,Tac Security Systems.</h5>
+                    Trishneet Arora is the founder and CEO of TAC Security, an IT security company. Arora has written books on cyber security, ethical hacking and web defence. He was named in Forbes 30 Under 30 2018 Asia list and Fortune 40 Under 40 2019 List of India's Brightest Business Minds                    <br>
+                    <br>
+                </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable3">More Info!</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalScrollable3" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle3" aria-hidden="true" style="color: black">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle3">Trishneet Arora</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Trishneet Arora is only 20 years old an international recognized Ethical Hacker, & Author, and Entrepreneur.
+
+
+
+                                Meet Trishneet Arora, a veritable wizard of technology who is an author, a cyber-security expert, an ethical hacker, an entrepreneur and an avid speaker on security solutions. Just at the age of 21, Trishneet has been able to accomplish a whole lot.
+
+                                With no family background in computers or business, Trishneet’s journey from a middle class child to a successful young adult is very extraordinary and inspirational.
+
+                                The tale began a decade ago when 11 year old Trishneet got his first computer. Soon he started to experiment with it and in turn learned all about computer hardware. As a result of his computer fanaticism he failed in the class VIII examination and completed his class X through open learning.
+
+
+
+                                Trishneet Arora has authored for book "The Hacking Era”, "Hacking TALK with Trishneet Arora"  and "Hacking with Smart Phones" with several technical manuals and given countless lectures, workshops and seminars throughout his career.
+
+
+                                Today his multinational enterprise, TAC Security Solutions, provides protection to corporations against network vulnerabilities and data theft and cyber security training. Some of TAC’s clients include the Central Bureau of Investigation (CBI), Punjab Police, Gujarat Police, Reliance Industries Limited, Amul, Ralson (India) Ltd, Avon Cycles Ltd, MNCs from Dubai and UK..
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="interest" style="border-bottom: 1px solid azure">
+
+        <br><br>
+        <br>
+
+    <h1><u>Skills and Hobbies</u></h1><br>
+
+
+        •	Coding - WebDev.<br>
+        •	Good in analyzing and problem solving, thereby a continuous learner.<br>
+        •	Effective Communicator and a public speaker.<br>
+        •	Proficient Speaker in Tamil, English and Hindi Languages.<br>
+        •	 Extremely Hardworking and Organized.<br>
+        •	Loves travelling and exploring new places and people.<br>
+
+        <br>
+    </div>
+
+
+    <div id="ambition" style="border-bottom: 1px solid white;"><br><br>
+        <br>
+
+        <h1><u>Ambition</u></h1>
+        In the short term, I expect to pass out from this college with wonderful memories. I wish to get placed in a start up based company to understand the ins and outs of the market to have a better
+        understanding. In long term, I wish to start a business/company of my own which will create a positive impact. I have already started to think some business plans which would help me in the same.
+        I truly believe we are much more worth than we can imagine. We believe that the price tags set by companies is equivalent to our worth. But indeed we are worth the amount of business, the comapnies
+        are able to make out of us.
+        <br>
+
+    </div>
+    <div class="bd-example" style="border-bottom: 1px solid azure">
+<br>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <h1><u>Some Photos</u></h1>
+                <div class="carousel-item active">
+                    <img src="Nithin_JRS.jpg" class="d-block w-100" alt="..." style="margin-top: 1%; height: 90%;">
+                    <div class="carousel-caption d-none d-md-block" style="background: azure; color: black;">
+                        <h5>Jitheshraj Scholarship for promising freshman</h5>
+                        <p>Scholar 2018-19</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Nithin_DS.jpg" class="d-block w-100" alt="..." style="margin-top: 1%; height: 90%;">
+                    <div class="carousel-caption d-none d-md-block" style="background: azure; color: black;">
+                        <h5>Awarded for my contribution as the Deputy Secretary, Students' Council 2018-19.</h5>
+                        <p>L to R : Nithin, Prof. Deepak Phatak, Dr. Mini Shaji Thomas</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <br>
+    </div>
+    <div id="project" style="border-bottom: 1px solid azure"><br><br>
+
+    <h1><u>Achievements</u></h1> <br>
+
+        <ul>
+            <li>
+        	Was awarded the Competent Communicator recognition from the Toastmasters International, USA.<br>
+            </li>
+        <li> Winner of various public speaking contests held at Eastern Province and Saudi Arabian Levels.<br>
+        </li>
+            <li>
+            Successfully served as the President of a Youth Leadership Program, conducted by Toastmasters International, USA, leading the team of talented young leaders.<br>
+            </li>
+            <li>
+        	School Representative in the Regional Inter School Debate Contests.<br>
+            </li> <li>
+        	Class Representative in the Annual Arts and Science Exhibition and exhibited a working prototype on the renewable energy applications.<br>
+        </li> <li>
+            Willfully Served in the Bharat Scouts & Guides, National Head Quarters - Bharat Scouts and Guides, New Delhi, India.<br>
+            </li> <li>
+            Represented the School in the prestigious Zonal level Sports Cluster Meet in the Badminton and had won Silver Medal Recognition, in the individuals’ category.<br>
+            </li> <li>
+        	Head of Operations, Smart India Hackathon 2019 conducted in NIT-Trichy.<br>
+            </li> <li>
+        	Deputy Marketing Manager of NIT Trichy Festival 2019 spearheading the Marketing activities, transforming a total of 4 Multinational Companies into sponsors.<br>
+            </li> <li>
+        	Executive Committee Member of the National Service Scheme, NIT-Trichy leading a team of 15 members towards serving the society and the community to the best of our abilities.<br>
+            </li> <li>
+        	Coordinator of the Workshops and Informal Team of Festember, annual cultural fest of NIT Trichy with a footfall of over 17,000 people from 500 colleges across India.<br>
+            </li>
+        </ul>
+
+        <br>
+    </div>
+
+    <div id="tech" style="border-bottom: 1px solid azure; font-size: 30px;"><br>
+        <h1><u>Tech Projects</u></h1> <br>
+
+        For my Projects please check my Github Repo: <a href="https://github.com/NithinBalaaji?tab=repositories";>Explore! :)</a>
+
+
+    </div>
+
+
+    <div id="contact" style="border-bottom: 1px solid white" align="center"><br><br>
+        <br>
+
+        <h1><u>Contact Me</u></h1> Get in touch with me for latest updates!<br>
+        Contact No: 00919952928550<br>
+        Email: nithinbalaajidv@gmail.com
+        <br>
+        <br>
+    </div>
+</iv>
+<footer style="background-color: black">
+    <div class="container" align="center">
+        <div class="row">
+                <p style="color: white">Made with ♥ by Nithin Balaaji.</p>
+                <hr>
+                <ul class="social-icon" align="center">
+                    <a href="https://www.facebook.com/Nithin.aka.Balaaji.aka.Bala" target="_blank" class="fa fa-facebook fa-2x wow fadeIn" data-wow-delay="0.3s"></a>&nbsp; &nbsp;
+                    <a href="https://www.linkedin.com/in/nithin-balaaji/" class="fa fa fa-linkedin fa-2x wow fadeIn" data-wow-delay="0.6s"></a>&nbsp; &nbsp;
+                    <a href="https://www.instagram.com/nithin.balaaji/" target="_blank" class="fa fa-instagram fa-2x wow fadeIn" data-wow-delay="0.9s"></a>&nbsp; &nbsp;
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+
+
+
